@@ -20,16 +20,16 @@ void operacao(int n){
         break;
     case 2:
         resultado = num1 - num2;
-        printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        printf("Resultado: %.2lf - %.2lf = %.2lf", num1, num2, resultado);
         break;
     case 3: 
         resultado = num1 * num2;
-        printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        printf("Resultado: %.2lf * %.2lf = %.2lf", num1, num2, resultado);
         break;
     case 4:
         if(num2 != 0){
             resultado = num1/num2;
-            printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+            printf("Resultado: %.2lf / %.2lf = %.2lf", num1, num2, resultado);
         }else 
         printf("Erro: Divisao por zero nao e permitida.\n");
         break;
