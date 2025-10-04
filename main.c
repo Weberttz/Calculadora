@@ -5,51 +5,37 @@ void clear() {
     system("cls");
 }
 
-void operacaoSoma(){
+void operacao(int n){
     double num1, num2, resultado;
     printf("Digite o primeiro numero: ");
     scanf("%lf", &num1);
     printf("Digite o segundo numero: ");
     scanf("%lf", &num2);
 
-    resultado = num1 + num2;
-    printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
-}
-
-void operacaoSubtracao(){
-    double num1, num2, resultado;
-    printf("Digite o primeiro numero: ");
-    scanf("%lf", &num1);
-    printf("Digite o segundo numero: ");
-    scanf("%lf", &num2);
-
-    resultado = num1 - num2;
-    printf("Resultado: %.2lf - %.2lf = %.2lf", num1, num2, resultado);
-}
-
-void operacaoMultiplicacao(){
-    double num1, num2, resultado;
-    printf("Digite o primeiro numero: ");
-    scanf("%lf", &num1);
-    printf("Digite o segundo numero: ");
-    scanf("%lf", &num2);
-
-    resultado = num1 * num2;
-    printf("Resultado: %.2lf * %.2lf = %.2lf", num1, num2, resultado);
-}
-
-void operacaoDivisao(){
-    double num1, num2, resultado;
-    printf("Digite o primeiro numero: ");
-    scanf("%lf", &num1);
-    printf("Digite o segundo numero: ");
-    scanf("%lf", &num2);
-    if(num2 != 0){
-        resultado = num1/num2;
-        printf("Resultado: %.2lf / %.2lf = %.2lf", num1, num2, resultado);
+    switch (n)
+    {
+    case 1:
+        resultado = num1 + num2;
+        printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        break;
+    case 2:
+        resultado = num1 - num2;
+        printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        break;
+    case 3: 
+        resultado = num1 * num2;
+        printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        break;
+    case 4:
+        if(num2 != 0){
+            resultado = num1/num2;
+            printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
+        }else 
+        printf("Erro: Divisao por zero nao e permitida.\n");
+        break;
+    default:
+        break;
     }
-    else printf("Erro: Divisao por zero nao e permitida.\n");
-
 }
 
 int novaOperacao(){
@@ -82,19 +68,19 @@ void escolhaUsuario(){
         switch (opcao)
         {
         case 1:
-            operacaoSoma();
+            operacao(opcao);
             exe_programa = novaOperacao();
             break;
         case 2:
-            operacaoSubtracao();
+            operacao(opcao);
             exe_programa = novaOperacao();
             break;
         case 3:
-            operacaoMultiplicacao();
+            operacao(opcao);
             exe_programa = novaOperacao();
             break;
         case 4:
-            operacaoDivisao();
+            operacao(opcao);
             exe_programa = novaOperacao();       
             break;
         case 5:
