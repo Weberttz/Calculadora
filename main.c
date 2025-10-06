@@ -5,7 +5,7 @@ void clear() {
     system("cls");
 }
 
-void operacao(int n){
+void operacao(char n){
     double num1, num2, resultado;
     printf("Digite o primeiro numero: ");
     scanf("%lf", &num1);
@@ -14,19 +14,19 @@ void operacao(int n){
 
     switch (n)
     {
-    case 1:
+    case '1':
         resultado = num1 + num2;
         printf("Resultado: %.2lf + %.2lf = %.2lf", num1, num2, resultado);
         break;
-    case 2:
+    case '2':
         resultado = num1 - num2;
         printf("Resultado: %.2lf - %.2lf = %.2lf", num1, num2, resultado);
         break;
-    case 3: 
+    case '3': 
         resultado = num1 * num2;
         printf("Resultado: %.2lf * %.2lf = %.2lf", num1, num2, resultado);
         break;
-    case 4:
+    case '4':
         if(num2 != 0){
             resultado = num1/num2;
             printf("Resultado: %.2lf / %.2lf = %.2lf", num1, num2, resultado);
@@ -58,32 +58,33 @@ int novaOperacao(){
 
 
 void escolhaUsuario(){
-    int opcao, exe_programa = 1, invalido;
+    char opcao;
+    int exe_programa = 1, invalido;
     
     while(exe_programa == 1){
         invalido = 0;
         printf("===============================\nCalculadora Simples\n===============================");
         printf("\nSelecione uma operacao:\n1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao:");
-        scanf("%d", &opcao);
+        scanf("%c%*c", &opcao);
         switch (opcao)
         {
-        case 1:
+        case '1':
             operacao(opcao);
             exe_programa = novaOperacao();
             break;
-        case 2:
+        case '2':
             operacao(opcao);
             exe_programa = novaOperacao();
             break;
-        case 3:
+        case '3':
             operacao(opcao);
             exe_programa = novaOperacao();
             break;
-        case 4:
+        case '4':
             operacao(opcao);
             exe_programa = novaOperacao();       
             break;
-        case 5:
+        case '5':
             exe_programa = 0;
             break;
         default:
